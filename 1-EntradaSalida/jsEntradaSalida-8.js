@@ -15,13 +15,8 @@ function SacarResto()
 
 	resto=primerNumero%segundoNumero;
 
-	console.log(resto);
-
-
-
-
-
-
+	console.log("El resto es " +resto);
+	
 
 	
 }
