@@ -5,21 +5,17 @@ en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
 	var sueldo;
-	var aumento;
-	var sueldoConAumento;
+	//var aumento;
+	var resultadoSueldoAumentado;
 
 	sueldo=document.getElementById('sueldo').value;
 	sueldo=parseInt(sueldo);
-	aumento=sueldo*10/100;
-	aumento=parseInt(aumento);
+	//aumento=sueldo*10/100;
+	//aumento=parseInt(aumento);
 
-	sueldoConAumento=sueldo+aumento;
-
-	document.getElementById('resultado').value=sueldoConAumento;
-
-
-
-
+	//resultadoSueldoAumentado=sueldo+aumento;//mi forma
+	resultadoSueldoAumentado=sueldo+sueldo*10/100;
+	document.getElementById('resultado').value=resultadoSueldoAumentado;
 
 
 
