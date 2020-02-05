@@ -4,6 +4,11 @@
 */
 function mostrar()
 {
+	var nombre;
+	nombre=prompt("Ingrese su nombre");//funciones en minuscula 
+	document.getElementById('elNombre').value=nombre;
+
+
 
 }
 
