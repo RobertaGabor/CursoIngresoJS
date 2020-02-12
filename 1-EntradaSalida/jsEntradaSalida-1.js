@@ -6,7 +6,7 @@ function mostrar()
 	//alert("Nombre")//en comillas va contenido literal
 	alert(nombre);// para usar variable sin comillas
 	alert("Nombre de la alumna: "  + nombre);
-
+	//testeando git
 
 
 
