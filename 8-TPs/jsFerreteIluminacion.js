@@ -11,7 +11,7 @@ function CalcularPrecio ()
 	cantidadLamparas=parseInt(cantidadLamparas);
 
 	precioBruto=cantidadLamparas*35;
-	precioBruto=parseInt(precioNeto);
+	precioBruto=parseInt(precioBruto);
 
 	marcaLampara=document.getElementById('Marca').value;
 
@@ -26,7 +26,7 @@ function CalcularPrecio ()
 		if(cantidadLamparas==5)
 		{	
 
-			if(marcaLampara="ArgentinaLuz")
+			if(marcaLampara=="ArgentinaLuz")
 			{
 				porcentaje=40;
 			}
@@ -39,7 +39,7 @@ function CalcularPrecio ()
 		{
 			if(cantidadLamparas==4)
 			{
-				if(marcaLampara="ArgentinaLuz"||marcaLampara="FelipeLamparas")
+				if(marcaLampara=="ArgentinaLuz"||marcaLampara=="FelipeLamparas")
 				{
 					porcentaje=25;
 				}
@@ -52,13 +52,13 @@ function CalcularPrecio ()
 			{
 				if(cantidadLamparas==3)
 				{
-					if(marcaLampara="ArgentinaLuz")
+					if(marcaLampara=="ArgentinaLuz")
 					{
 						porcentaje=15;
 					}
 					else
 					{
-						if(marcaLampara="FelipeLamparas")
+						if(marcaLampara=="FelipeLamparas")
 						{
 							porcentaje=10
 						}
