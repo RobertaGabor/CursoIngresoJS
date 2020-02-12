@@ -11,7 +11,7 @@ function mostrar()
 	}
 	else
 	{
-		if(random==9||random==10)
+		if(random>8)
 		{
 			alert("EXELENTE");
 		}
