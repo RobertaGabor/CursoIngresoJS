@@ -1,32 +1,32 @@
 function CalcularPrecio () 
 {
 	var cantidadLamparas;
-	var marcaLampara;
-	var precioBruto
+	var marcaLamparas;
+	var precioBruto;
 	var porcentaje;
-	var precioFinal;
-	var precioConIIBB;
+	var precioConDescuento;
+	var iibb;
+	var precioConIibb;
 
 	cantidadLamparas=document.getElementById('Cantidad').value;
 	cantidadLamparas=parseInt(cantidadLamparas);
 
+	marcaLamparas=document.getElementById('Marca').value;
+
 	precioBruto=cantidadLamparas*35;
 	precioBruto=parseInt(precioBruto);
 
-	marcaLampara=document.getElementById('Marca').value;
-
 	porcentaje=0;
-	
+
 	if(cantidadLamparas>5)
 	{
-		porcentaje=50;
+		porcentaje=50;//va un solo igual para definir variable
 	}
 	else
 	{
 		if(cantidadLamparas==5)
-		{	
-
-			if(marcaLampara=="ArgentinaLuz")
+		{
+			if(marcaLamparas=="ArgentinaLuz")
 			{
 				porcentaje=40;
 			}
@@ -39,50 +39,54 @@ function CalcularPrecio ()
 		{
 			if(cantidadLamparas==4)
 			{
-				if(marcaLampara=="ArgentinaLuz"||marcaLampara=="FelipeLamparas")
+				if(marcaLamparas=="ArgentinaLuz"||marcaLamparas=="FelipeLamparas")
 				{
 					porcentaje=25;
 				}
 				else
 				{
-					porcentaje=20
+					porcentaje=20;
 				}
 			}
 			else
 			{
 				if(cantidadLamparas==3)
 				{
-					if(marcaLampara=="ArgentinaLuz")
+					if(marcaLamparas=="ArgentinaLuz")
 					{
 						porcentaje=15;
 					}
 					else
 					{
-						if(marcaLampara=="FelipeLamparas")
+						if(marcaLamparas="FelipeLamparas")
 						{
-							porcentaje=10
+							porcentaje=10;
 						}
 						else
 						{
-							porcentaje=5
+							porcentaje=5;
 						}
 					}
 				}
-				//else//podes poner descuento =0 o ponerlo arriba	
 			}
 		}
 	}
 	
-	precioFinal=precioBruto-precioBruto*porcentaje/100;
-	precioFinal=parseInt(precioFinal);
-	
-	if(precioFinal>120)
-	{
-		porcentaje=10;	
-	}
-	
-	precioConIIBB=precioFinal+precioFinal*porcentaje/100;
-	precioConIIBB=parseInt(precioConIIBB);
+	precioConDescuento=precioBruto-precioBruto*porcentaje/100;
+	precioConDescuento=parseInt(precioConDescuento);
 
-	document.getElementById('precioDescuento').value=precioConIIBB;	
-}
+	if(precioConDescuento>120)
+	{
+		iibb=10;
+		alert("IIBB Usted pago " +precioConDescuento*iibb/100);//se parsea?
+	}
+	else
+	{
+		iibb=0;
+	}
+
+	precioConIibb=precioConDescuento+precioConDescuento*iibb/100;
+	precioConIibb=parseInt(precioConIibb);
+
+	document.getElementById('precioDescuento').value=precioConIibb;
+}	
