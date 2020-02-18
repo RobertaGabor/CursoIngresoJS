@@ -1,9 +1,9 @@
 function CalcularPrecio () 
 {
 	var cantidadLamparas;
-	var marcaLamparas;
+	var marcaLampara;
 	var precioBruto;
-	var porcentaje;
+	var descuento;
 	var precioConDescuento;
 	var iibb;
 	var precioConIibb;
@@ -11,70 +11,114 @@ function CalcularPrecio ()
 	cantidadLamparas=document.getElementById('Cantidad').value;
 	cantidadLamparas=parseInt(cantidadLamparas);
 
-	marcaLamparas=document.getElementById('Marca').value;
+	marcaLampara=document.getElementById('Marca').value;
 
 	precioBruto=cantidadLamparas*35;
-	precioBruto=parseInt(precioBruto);
+	console.info("Este es bruto",precioBruto);
 
-	porcentaje=0;
-
-	if(cantidadLamparas>5)
+	descuento=0;
+	switch(cantidadLamparas)
 	{
-		porcentaje=50;//va un solo igual para definir variable
+		case 5:
+		switch(marcaLampara)
+		{
+			case "ArgentinaLuz":
+			descuento=40;
+			break;
+			default:
+			descuento=30;
+		}
+		break;
+		case 4:
+		switch(marcaLampara)
+		{
+			case "ArgentinaLuz":
+			case "FelipeLamparas":
+			descuento=25;
+			break;
+			default:
+			descuento=20;
+		}
+		break;
+		switch(marcaLampara)
+		{
+			case "ArgentinaLuz":
+			descuento=15;
+			break;
+			case "FelipeLamparas":
+			descuento=10;
+			break;
+			default:
+			descuento=5;
+		}
+		break;
+		case 1:
+		case 2:
+		descuento=0;
+		break;
+		default:
+		descuento=50;
+		break;
+	}
+
+	/*if(cantidadLamparas>5)
+	{
+		descuento=50;
 	}
 	else
 	{
 		if(cantidadLamparas==5)
 		{
-			if(marcaLamparas=="ArgentinaLuz")
+			if(marcaLampara=="ArgentinaLuz")
 			{
-				porcentaje=40;
+				descuento=40;
 			}
 			else
 			{
-				porcentaje=30;
+				descuento=30;
 			}
 		}
 		else
 		{
 			if(cantidadLamparas==4)
 			{
-				if(marcaLamparas=="ArgentinaLuz"||marcaLamparas=="FelipeLamparas")
+				if(marcaLampara=="ArgentinaLuz"||marcaLampara=="FelipeLamparas")
 				{
-					porcentaje=25;
+					descuento=25;
 				}
 				else
 				{
-					porcentaje=20;
+					descuento=20;
 				}
 			}
 			else
 			{
 				if(cantidadLamparas==3)
 				{
-					if(marcaLamparas=="ArgentinaLuz")
+					if(marcaLampara=="ArgentinaLuz")
 					{
-						porcentaje=15;
+						descuento=15;
 					}
 					else
 					{
-						if(marcaLamparas="FelipeLamparas")
+						if(marcaLampara=="FelipeLamparas")
 						{
-							porcentaje=10;
+							descuento=10;
 						}
 						else
 						{
-							porcentaje=5;
+							descuento=5;
 						}
 					}
 				}
 			}
 		}
-	}
-	
-	precioConDescuento=precioBruto-precioBruto*porcentaje/100;
-	precioConDescuento=parseInt(precioConDescuento);
+	}*/
 
+
+	precioConDescuento=precioBruto-precioBruto*descuento/100;
+	console.info("Este es con descuento",precioConDescuento);
+	
 	if(precioConDescuento>120)
 	{
 		iibb=10;
