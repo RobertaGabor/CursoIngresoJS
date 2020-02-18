@@ -40,6 +40,7 @@ function CalcularPrecio ()
 			descuento=20;
 		}
 		break;
+		case 3:
 		switch(marcaLampara)
 		{
 			case "ArgentinaLuz":
