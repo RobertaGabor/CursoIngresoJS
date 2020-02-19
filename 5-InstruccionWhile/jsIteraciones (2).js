@@ -1,13 +1,13 @@
 function mostrar()
 {
-	var iteracion;
-	iteracion=0;
-	iteracion=parseInt(iteracion);
+	var contador;
+	contador=10;//cambias de lado los valores
+	//contador=parseInt(contador); no parsear
 
-	while(iteracion<10)
+	while(contador>0)
 	{
-		console.log(10-iteracion);
-		iteracion=iteracion+1;
+		console.log(contador);//puede cambiar de lugar
+		contador=contador-1;
 	}
 
 }//FIN DE LA FUNCIÓN

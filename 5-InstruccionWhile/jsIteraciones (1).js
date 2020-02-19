@@ -1,13 +1,13 @@
 function mostrar()
 {
-	var iteracion;
-	iteracion=0;
-	iteracion=parseInt(iteracion);
+	var contador;
+	contador=0;
+	//contador=parseInt(contador); no se parsea, si ya es numero entero, y no se ejecuta ecuacio.
 
 
-	while (iteracion<10)//10 incluido
+	while (contador<10)//10 incluido
 	{
-		console.log(1+iteracion);// numero es de donde empieza
-		iteracion=iteracion+1;
+		contador=contador+1;
+		console.log(contador);// numero es de donde empieza
 	}
 }//FIN DE LA FUNCIÓN

@@ -37,15 +37,15 @@ function mostrar()
 		case 3:
 		case 4:
 		case 5:
-		console.info("Es de noche");
+		console.info("Es de noche");//hacerlo alert
+		
+		if(hora>19&&hora<24)//va dentro de switch
+		{
+			console.info("A dormir");
+		}
 		break;
 
 		default:
 		console.info("Hora no valida");
-	}
-
-	if(hora>19&&hora<24)
-	{
-		console.info("A dormir");
-	}
+    }		
 }
