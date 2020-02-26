@@ -1,5 +1,5 @@
 function mostrar()
-{
+{ 
 	var respuesta;
 	var numero;
 	var sumaPositiva;
@@ -27,7 +27,7 @@ function mostrar()
 		numero=prompt("ingrese numero");
 		numero=parseInt(numero);
 		respuesta=prompt("Si quiere terminar la ecuacion escribir no, sino continuará","ej: no");
-		
+		//dijo validar numero???
 		if(numero>0)
 		{
 			sumaPositiva=sumaPositiva+numero;
@@ -46,7 +46,7 @@ function mostrar()
 				contadorCero=contadorCero+1;
 			}
 		}
-		if(numero % 2 == 0)
+		if(numero % 2 == 0)//va a dar 0 como si fuera par, chequear
 		{
 			contadorPares=contadorPares+1;
 		}

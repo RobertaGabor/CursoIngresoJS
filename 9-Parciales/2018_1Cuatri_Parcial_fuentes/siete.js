@@ -1,10 +1,12 @@
 function mostrar()
-{
+{ 
 	var nota;
 	var sexo;
 	var promedio;
 	var contador;
 	var sumaTotal;
+	var minimo;
+	var minimoSexo;//chequear que coño e eto
 
 	contador=0;
 	contador=parseInt(contador);//preguntar xq parseo
@@ -27,9 +29,22 @@ function mostrar()
 			sexo=prompt("Ingrese sexo");
 		}
     }
-
+    
+    if(contador==1)
+    {
+    	minimo=nota;
+    }
+    else
+    {
+    	if(minimo>nota)
+    	{
+    		minimo=nota;
+    		minimoSexo=sexo;//variable auxiliar, crear por cada cambio
+    	}
+    }
+    
 
     promedio=sumaTotal/contador;
     alert("promedio de notas totales: "+promedio);
-
+    alert("La nota mas baja es "+minimo+ " de sexo "+minimoSexo);
 }

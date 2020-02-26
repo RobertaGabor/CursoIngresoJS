@@ -6,7 +6,7 @@ C.	Estado civil, 1-para soltero, 2-para casados, 3-para divorciados y 4-para viu
 D.	Sueldo bruto, no menor a 8000.
 E.	Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.
- */
+ */ 
 function ComenzarIngreso () 
 {
  	var edad;
@@ -29,32 +29,31 @@ function ComenzarIngreso ()
  		sexo=prompt("Ingrese sexo","ej: m o f");
  	}
 
- 	while(/*isNaN(estadoCivil)||*/estadoCivil<1||estadoCivil>4)//lo contrario para que pida devuelta lo que esta mal
+ 	while(isNaN(estadoCivil)||estadoCivil<1||estadoCivil>4)//lo contrario para que pida devuelta lo que esta mal
  	{
  		estadoCivil=prompt("Ingrese 1-para soltero, 2-para casado, 3-para divorciado, 4-para viudo");
-
- 		if(estadoCivil==4)
+ 	}
+ 	 if(estadoCivil==4)// LA LOGICA SIEMPRE VA AFUERA DE LA VALIDACION, VALIDO --> LOGICA
+ 	{
+ 		estadoCivil="Viudo";
+ 	}
+ 	else
+ 	{
+ 		if(estadoCivil==3)
  		{
- 			estadoCivil="Viudo";
+ 			estadoCivil="Divorciado";
  		}
  		else
  		{
- 			if(estadoCivil==3)
+ 			if(estadoCivil==2)
  			{
- 				estadoCivil="Divorciado";
+ 				estadoCivil="Casado";
  			}
  			else
  			{
- 				if(estadoCivil==2)
+ 				if(estadoCivil==1)
  				{
- 					estadoCivil="Casado";
- 				}
- 				else
- 				{
- 					if(estadoCivil==1)
- 					{
- 					 	estadoCivil="Soltero";
- 					}
+ 				 	estadoCivil="Soltero";
  				}
  			}
  		}
@@ -72,9 +71,10 @@ function ComenzarIngreso ()
 
  	while(nacionalidad!="A"&&nacionalidad!="E"&&nacionalidad!="N")
  	{
- 		nacionalidad=prompt("Ingrese “A” para argentinos, “E” para extranjeros, “N” para nacionalizados","ej: A");
-
- 		if(nacionalidad=="A")//xq se rompe el if, bucle
+ 		nacionalidad=prompt("Ingrese “A” para argentinos, “E” para extranjeros, “N” para nacionalizados","ej: A");	
+ 	}
+ 	
+ 	if(nacionalidad=="A")
  		{
  			nacionalidad="Argentino";
  		}
@@ -92,8 +92,6 @@ function ComenzarIngreso ()
  				}
  			}
  		}
- 	}
- 	
  	document.getElementById('Edad').value=edad;
  	document.getElementById('Sexo').value=sexo;
  	document.getElementById('EstadoCivil').value=estadoCivil;
