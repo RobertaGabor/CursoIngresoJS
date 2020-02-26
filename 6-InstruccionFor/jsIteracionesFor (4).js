@@ -1,14 +1,15 @@
-function mostrar()
+function mostrar()//no entiendo aaa
 {
-
 	var i;
-	var infinito;
-	var stop;
-	infinito="repetir";
-	
-	for(i=stop;i=!stop;infinito)
+
+	for(i=0;;i++)
 	{
-		console.log(infinito);
+		document.write("ponele "+i+"<br>");
+
+		if(i>100)
+		{
+			break;
+		}
 	}
 
 
