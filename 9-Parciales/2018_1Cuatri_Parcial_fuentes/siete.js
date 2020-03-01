@@ -1,50 +1,59 @@
 function mostrar()
-{ 
+{
+	var i;
 	var nota;
 	var sexo;
-	var promedio;
-	var contador;
-	var sumaTotal;
-	var minimo;
-	var minimoSexo;//chequear que coño e eto
+	var acumulador;
+	var minima;
+	var varones;
+	var sexoMinima;
 
-	contador=0;
-	contador=parseInt(contador);//preguntar xq parseo
-	sumaTotal=0;
+	acumulador=0;
+	varones=0;
 
-	while(contador<5)
-	{ 
-		nota=prompt("Ingrese nota");
+	for(i=0;i<5;i++)
+	{
+		nota=prompt("Ingrese la nota");//primero pide condicion
 		nota=parseInt(nota);
-		sexo=prompt("Ingrese sexo");
-		contador=contador+1;
-		sumaTotal=sumaTotal+nota;
 
-		while(isNaN(nota)||nota<0||nota>10)
+		while(nota<0||nota>10)//se fija la logica y SOLO SI ENTRA puede bajar
 		{
-			nota=prompt("Ingrese nota");
-		}
-		while(sexo!="m"&&sexo!="f")
-		{
-			sexo=prompt("Ingrese sexo");
-		}
-    }
-    
-    if(contador==1)
-    {
-    	minimo=nota;
-    }
-    else
-    {
-    	if(minimo>nota)
-    	{
-    		minimo=nota;
-    		minimoSexo=sexo;//variable auxiliar, crear por cada cambio
-    	}
-    }
-    
+			nota=prompt("Ingrese la nota");
+			nota=parseInt(nota);
+		}	
 
-    promedio=sumaTotal/contador;
-    alert("promedio de notas totales: "+promedio);
-    alert("La nota mas baja es "+minimo+ " de sexo "+minimoSexo);
+		sexo=prompt("Ingrese sexo m o f","Ej: f");//si bajó pide sexo
+
+		while(sexo!="m"&&sexo!="f")//solo si entra baja y acumula
+		{
+			sexo=prompt("Ingrese sexo m o f","Ej: f");
+		}
+		
+		acumulador=acumulador+nota;
+		
+		if(nota>5)
+		{
+			if(sexo=="m")
+			{
+				varones++;
+			}		
+		}
+		if(i==0)//adentro de for, porque no guarda informacion el seguir entrando
+		{
+			minima=nota;
+			sexoMinima=sexo;
+		}
+		else
+		{
+			if(nota<minima)
+			{
+				minima=nota;
+				sexoMinima=sexo;
+			}
+		}
+	}
+	console.info("promedio: " +acumulador/i);
+	console.info("cantidad de varones con nota mayor igual a 6: "+varones);
+	console.info("La menor nota es: "+minima+" de sexo: "+sexoMinima);
 }
+//el for si pones logica afuera te guarda solo lo ultimo que pusiste
