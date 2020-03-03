@@ -79,7 +79,7 @@ function mostrar()
  		}
  		else
  		{
- 			if(edad<18&&edad>11)
+ 			if(edad>11)//YA ENTRO A QUE ES MENOR A 18, ENTONCES PREGUNTA SI ES MAYOR A 11 DIRECTO
  			{
  				acumuladorDeAdolescentes=acumuladorDeAdolescentes+notaFinal;
  				contadorDeAdolescentes++;
